@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-950 text-white antialiased;
+  }
+}
+
+@layer utilities {
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      opacity: 1;
+      filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.5));
+    }
+    50% {
+      opacity: 0.8;
+      filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.8));
+    }
+  }
+
+  .animate-scan {
+    animation: scan 2s linear infinite;
+  }
+
+  @keyframes scan {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+}
